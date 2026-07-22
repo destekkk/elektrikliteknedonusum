@@ -1,0 +1,30 @@
+DirectoryIndex index.html index.htm
+
+# Correct MIME types (Natro/cPanel often serves .css as text/html)
+AddType text/css .css
+AddType application/javascript .js
+AddType application/json .json
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/webp .webp
+AddType image/svg+xml .svg
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType text/plain .txt
+AddType application/xml .xml
+AddType text/html .html .htm
+
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .html .css .js .xml .txt
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.html [L]
+</IfModule>
