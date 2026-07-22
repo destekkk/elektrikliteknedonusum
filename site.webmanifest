@@ -1,0 +1,17 @@
+{
+  "name": "ElektrikliTekneDönüşüm",
+  "short_name": "ETD",
+  "description": "Elektrikli tekne dönüşüm — motor, batarya ve montaj",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e8f6f8",
+  "theme_color": "#0d9aa8",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/hero-boat.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
